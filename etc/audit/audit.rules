@@ -1,0 +1,25 @@
+# This file contains the auditctl rules that are loaded
+# whenever the audit daemon is started via the initscripts.
+# The rules are simply the parameters that would be passed
+# to auditctl.
+
+# First rule - delete all
+-D
+
+# Increase the buffers to survive stress events.
+# Make this bigger for busy systems
+-b 8192
+
+# Enable audit when startup
+-e 1
+
+# Feel free to add below this line. See auditctl man page
+-w /aulog/ -k LOG_audit -p wa
+-w /etc/audit/auditd.conf -k CFG_audit_conf -p wa
+-w /etc/audit/audit.rules -k CFG_audit_rules -p wa
+-w /etc/passwd -k CFG_passwd -p wa
+-w /etc/group -k CFG_group -p wa
+-w /etc/sysconfig/ -k CFG_sysconfig -p wa
+-w /etc/security/ -k CFG_security -p wa
+-w /etc/inittab/ -k CFG_inittab -p wa
+
