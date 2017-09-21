@@ -107,6 +107,7 @@ X11Forwarding yes
 #TCPKeepAlive yes
 #UseLogin no
 #UsePrivilegeSeparation yes
+UsePrivilegeSeparation sandbox          # Default for new installations.
 #PermitUserEnvironment no
 #Compression delayed
 #ClientAliveInterval 0

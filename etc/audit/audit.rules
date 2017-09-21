@@ -21,5 +21,3 @@
 -w /etc/group -k CFG_group -p wa
 -w /etc/sysconfig/ -k CFG_sysconfig -p wa
 -w /etc/security/ -k CFG_security -p wa
--w /etc/inittab/ -k CFG_inittab -p wa
-

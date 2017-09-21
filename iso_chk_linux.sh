@@ -24,10 +24,14 @@ echo "==================================" >> $outfil
 echo " cat /etc/login.defs|grep PASS_MAX_DAYS"  >> $outfil
 cat /etc/login.defs|grep PASS_MAX_DAYS |grep -v "^#" >> $outfil
 echo "---------   ----------  ----------- " >> $outfil
-echo "cat /etc/pam.d/common-password |grep passphrase " >> $outfil
-cat  /etc/security/pam_pwcheck.conf |grep remember|grep -v "^#"  >> $outfil
+echo "pam-config --query --pwhistory" >> $outfil
+pam-config --query --pwhistory  >> $outfil
+echo "---------   ----------  ----------- " >> $outfil
+echo "pam-config --query --cracklib" >> $outfil
+pam-config --query --cracklib >> $outfil
 echo "----------------------------------" >> $outfil
 echo "  " >> $outfil
+
 
 echo "2-2 ½T»{¨Ï¥ÎªÌ±b¸¹ªº¥i§P§O©Ê¡H" >> $outfil
 echo "==================================" >> $outfil
@@ -85,14 +89,14 @@ echo "  " >> $outfil
 
 
 
-echo "2-7 ½T»{¨t²Î¹w³]¨Ï¥ÎªÌ±b¸¹ªºumask­È¬°027¬" >> $outfil
+echo "2-7 ½T»{¨t²Î¹w³]¨Ï¥ÎªÌ±b¸¹ªºumask­È¬°027?" >> $outfil
 echo "==================================" >> $outfil
 echo "cat /root/.profile |grep umask "  >> $outfil
 cat /root/.profile |grep umask  >> $outfil
 echo "----------------------------------" >> $outfil
 echo "  " >> $outfil
 
-echo "2-8 ÀË¬drootµn¤J®É¬O§_°õ¦æ«Drootªºµ{¦¡­"  >> $outfil
+echo "2-8 ÀË¬drootµn¤J®É¬O§_°õ¦æ«Drootªºµ{¦¡?"  >> $outfil
 echo "==================================" >> $outfil
 echo "ls -l /root/.profile" >> $outfil
 ls -l /root/.profile >> $outfil
@@ -100,7 +104,7 @@ cat /root/.profile  >> $outfil
 echo "----------------------------------" >> $outfil
 echo "  " >> $outfil
 
-echo "2-9 ½T»{¬O§_Ãö³¬¤£¥²»Ý­nµn¤JÅv­­ªº¨t²Î¹w³]±b¸¹­"  >> $outfil
+echo "2-9 ½T»{¬O§_Ãö³¬¤£¥²»Ý­nµn¤JÅv­­ªº¨t²Î¹w³]±b¸¹?"  >> $outfil
 echo "==================================" >> $outfil
 echo "¦P 2-2 /etc/passwd ÀÉ" >> $outfil
 cat /etc/passwd |grep adm:x |grep -v itmadm >> $outfil
@@ -135,8 +139,8 @@ echo "  " >> $outfil
 
 echo "4-1 ½T»{¨t²Î¤§½]®Ö¥\¯à¬O§_¤w¸g±Ò°Ê¡H "  >> $outfil
 echo "==================================" >> $outfil
-echo "4-1-1 ps -ef|grep audit |grep -v grep "  >> $outfil
-ps -ef|grep audit |grep -v grep   >> $outfil
+echo "systemctl status auditd.service "  >> $outfil
+systemctl status auditd.service >> $outfil
 echo "----------------------------------" >> $outfil
 echo "4-1-2 cat auditd.conf |grep -v "#" "  >> $outfil
 cat /etc/audit/auditd.conf |grep -v "^#"  >> $outfil
@@ -152,7 +156,7 @@ echo "----------------------------------" >> $outfil
 echo "  " >> $outfil
 
 
-echo "5-1 ½T»{cron³]©w¤§¾A·í©Ê,¤Îcrontab file(/var/spool/cron/tabs)¬O§_¾A·í«OÅ@Å "  >> $outfil
+echo "5-1 ½T»{cron³]©w¤§¾A·í©Ê,¤Îcrontab file(/var/spool/cron/tabs)¬O§_¾A·í«OÅ@? "  >> $outfil
 echo "==================================" >> $outfil
 echo '5-1-1 crontab -l |grep -v "^#"'  >> $outfil
 crontab -l |grep -v "^#"  >> $outfil
@@ -192,7 +196,7 @@ echo "  " >> $outfil
 echo "7-1 ½T»{¥Ø«e¬O§_¤w§ó·s¦Ü­×¸Éµ{¦¡¤§³Ì¾Aª©¥»¡C " >> $outfil
 echo "==================================" >> $outfil
 echo "ºû«ù¥b¦~«e¤§³Ì¾Aª©¥»"   >> $outfil
-sam --no-header-sig-check --no-rpm-verify --no-rpm-verify-md5 --skip-unmatched-prod --strict-repo-description --no-log-timestamp |grep name:|awk '{print $2}'  >> $outfil
+cat /etc/SuSE-release
 echo "----------------------------------" >> $outfil
 echo "  " >> $outfil
 
