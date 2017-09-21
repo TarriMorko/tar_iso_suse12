@@ -67,6 +67,13 @@ useradd spos4 -c spos4 -g 700 -m -u 704 -s /bin/bash
 
 ##############
 tar -xvpPf /tmp/tar_iso_suse12.tar
+chmod 644 /etc/cron.allow /etc/issue /etc/issue.net /etc/login.defs
+chmod 644 /etc/profile.local /etc/profile /etc/services
+chmod 644 /root/.profile
+chmod 640 /etc/audit/audit.rules /etc/audit/auditd.conf /etc/ssh/sshd_config
+chmod 600 /etc/rsyslog.conf
+chmod 660 /etc/sudoers
+
 systemctl restart sshd.service
 systemctl restart rsyslog.service
 
@@ -89,5 +96,4 @@ chmod -R 700 /root
 systemctl enable auditd.service
 systemctl start auditd.service
 
-# use sha512 instead of md5 for password
 
