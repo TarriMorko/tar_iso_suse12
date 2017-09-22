@@ -6,7 +6,7 @@ export LC_ALL=POSIX
 
 
 ## Check OS Version
-grep "VERSION=\"12" /etc/os-release
+grep -q "VERSION=\"12" /etc/os-release
 rc=$?
 
 if [ $rc -ne 0 ] ; then
@@ -23,7 +23,7 @@ cp -p /etc/pam.d/common-password-pc /etc/pam.d/common-password-pc.bak
 cp -p /etc/pam.d/common-auth-pc /etc/pam.d/common-auth-pc.bak
 cp -p /etc/pam.d/common-account-pc /etc/pam.d/common-account-pc.bak
 cp -p /etc/pam.d/sshd /etc/pam.d/sshd.bak
-tar -cf pam_d.tar.bak /etc/pam.d
+tar -cf pam_d.tar.bak /etc/pam.d >/dev/null 2>&1
 
 cp -p /etc/passwd /etc/passwd.bak
 cp -p /etc/audit/audit.rules /etc/audit/audit.rules.bak
