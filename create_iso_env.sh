@@ -58,7 +58,7 @@ pam-config -a \
 tar -xvpPf /tmp/tar_iso_suse12.tar
 chmod 644 /etc/cron.allow /etc/issue /etc/issue.net /etc/login.defs
 chmod 644 /etc/profile.local /etc/profile /etc/services
-chmod 644 /etc/pam_d/common-auth-pc
+chmod 644 /etc/pam.d/common-auth-pc
 chmod 644 /root/.profile
 chmod 640 /etc/audit/audit.rules /etc/audit/auditd.conf /etc/ssh/sshd_config
 chmod 600 /etc/rsyslog.conf
