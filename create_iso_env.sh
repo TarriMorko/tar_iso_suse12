@@ -41,7 +41,7 @@ cat /etc/passwd.tmp > /etc/passwd
 rm /etc/passwd.tmp
 
 pam-config -a \
-    --pwhistory --pwhistory-remember=2 \
+    --pwhistory --pwhistory-remember=5 \
     --cracklib-dcredit=-1 \
     --cracklib-ucredit=-1 \
     --cracklib-lcredit=-1 \
@@ -51,18 +51,7 @@ pam-config -a \
     --cracklib-dictpath=/usr/lib/null_dict \
     --unix-sha512
 
-## Add Accounts
-groupadd -g 800 datactrl
-groupadd -g 900 dc1
-groupadd -g 920 dc3
-groupadd -g 700 sp
 
-useradd opusr -c opusr -g 800 -m -u 802 -s /bin/bash
-useradd spadmin -c spadmin -g 700 -m -u 712 -s /bin/bash
-useradd spos1 -c spos1 -g 700 -m -u 701 -s /bin/bash
-useradd spos2 -c spos2 -g 700 -m -u 702 -s /bin/bash
-useradd spos3 -c spos3 -g 700 -m -u 703 -s /bin/bash
-useradd spos4 -c spos4 -g 700 -m -u 704 -s /bin/bash
 
 
 ##############
@@ -98,3 +87,15 @@ systemctl enable auditd.service
 systemctl start auditd.service
 
 
+## Add Accounts
+groupadd -g 800 datactrl
+groupadd -g 900 dc1
+groupadd -g 920 dc3
+groupadd -g 700 sp
+
+useradd opusr -c opusr -g 800 -m -u 802 -s /bin/bash
+useradd spadmin -c spadmin -g 700 -m -u 712 -s /bin/bash
+useradd spos1 -c spos1 -g 700 -m -u 701 -s /bin/bash
+useradd spos2 -c spos2 -g 700 -m -u 702 -s /bin/bash
+useradd spos3 -c spos3 -g 700 -m -u 703 -s /bin/bash
+useradd spos4 -c spos4 -g 700 -m -u 704 -s /bin/bash
