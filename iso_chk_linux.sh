@@ -187,8 +187,8 @@ echo "==================================" >> $outfil
 echo "cat /etc/xinetd.conf |grep -v "^#""  >> $outfil
 cat /etc/xinetd.conf |grep -v "^#"  >> $outfil
 echo "----------------------------------" >> $outfil
-echo "chkconfig --list |tail -18 "  >> $outfil
-chkconfig --list |tail -18   >> $outfil
+echo "systemctl list-unit-files"          >> $outfil
+systemctl list-unit-files                 >> $outfil
 echo "----------------------------------" >> $outfil
 echo "  " >> $outfil
 
