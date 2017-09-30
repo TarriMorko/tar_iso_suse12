@@ -1,10 +1,20 @@
 # tar_iso_suse12
+# Changelog
 
-安裝方法
-將 tmp/tar_iso_suse12.tar create_iso_env.sh 放到 /tmp
-執行 create_iso_env
+## [Unreleased]
 
-設定 spos2 的密碼
-passwd spos2
 
-重開機
+## [1.4.2] - 2017-09-30
+### Fixed
+- 修正執行 iso_chk_linux.sh 時的錯誤訊息（pam-config的錯誤訊息可忽略）
+
+
+# 安裝方法
+1. 把 tar_iso_suse12.tar 跟 create_iso_env.sh 放到 /tmp 
+2. 執行 create_iso_env.sh
+3. 給帳號 spos2 設定一個新的密碼 passwd spos2
+4. 重開機
+5. 用spos2 登入
+6. 切換到 root
+7. 執行 /tmp/iso_chk_linux.sh
+8. 在 /home/spos2/ 裡面會產生一個 xxx_iso_chk_linux.
