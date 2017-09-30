@@ -7,6 +7,7 @@
 ## [1.0.1] - 2017-09-30
 ### Fixed
 - 修正執行 iso_chk_linux.sh 時的錯誤訊息（pam-config的錯誤訊息可忽略）
+- 將 iso_chk_linux.sh 中的 chkconfig 指令改為 systemctl list-unit-files
 - 將密碼記憶次數從 3 次改為 5 次
 
 
