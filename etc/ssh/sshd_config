@@ -40,7 +40,6 @@ Protocol 2
 #LoginGraceTime 2m
 #PermitRootLogin yes
 PermitRootLogin no
-#PermitRootLogin no
 #StrictModes yes
 #MaxAuthTries 6
 #MaxSessions 10
@@ -134,4 +133,4 @@ AcceptEnv LC_IDENTIFICATION LC_ALL
 #	X11Forwarding no
 #	AllowTcpForwarding no
 #	ForceCommand cvs server
-AllowUsers      spos1 spos2 spos3 dc01 dcporting itmadm@10.0.31.235 cbedi opusr
+AllowUsers      spadmin spos1 spos2 spos3 spos4 opusr
