@@ -188,9 +188,29 @@ echo "cat /etc/xinetd.conf |grep -v "^#""  >> $outfil
 cat /etc/xinetd.conf |grep -v "^#"  >> $outfil
 echo "----------------------------------" >> $outfil
 echo "systemctl list-unit-files"          >> $outfil
-systemctl list-unit-files                 >> $outfil
+
+systemctl status auditd.service | grep Active >> $outfil
+systemctl status autofs.service | grep Active >> $outfil
+systemctl status cron.service | grep Active >> $outfil
+systemctl status cups.service  | grep Active >> $outfil
+systemctl status getty.service   | grep Active >> $outfil
+systemctl status ipmievd.service  | grep Active >> $outfil
+systemctl status nfs.service   | grep Active >> $outfil
+systemctl status nfsserver.service | grep Active >> $outfil
+systemctl status postfix.service | grep Active >> $outfil
+systemctl status rsyslog.service   | grep Active >> $outfil
+systemctl status sshd.service  | grep Active >> $outfil
+systemctl status vsftpd.service | grep Active >> $outfil
+systemctl status xinetd.service  | grep Active >> $outfil
+systemctl status vsftpd.socket  | grep Active >> $outfil
+systemctl status nfs-client.target | grep Active >> $outfil
+
 echo "----------------------------------" >> $outfil
 echo "  " >> $outfil
+
+
+
+
 
 
 echo "7-1 確認目前是否已更新至修補程式之最適版本。 " >> $outfil
