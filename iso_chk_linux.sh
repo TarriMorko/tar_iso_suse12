@@ -32,6 +32,14 @@ pam-config --query --cracklib >> $outfil
 echo "----------------------------------" >> $outfil
 echo "  " >> $outfil
 
+for name in $(cat /etc/passwd | awk -F":" '{print $1}'); do
+    echo ""            >> $outfil
+    echo $name ":"            >> $outfil
+    echo ""            >> $outfil
+    chage -l $name            >> $outfil
+done
+
+
 
 echo "2-2 確認使用者帳號的可判別性？" >> $outfil
 echo "==================================" >> $outfil
@@ -189,21 +197,24 @@ cat /etc/xinetd.conf |grep -v "^#"  >> $outfil
 echo "----------------------------------" >> $outfil
 echo "systemctl list-unit-files"          >> $outfil
 
-systemctl status auditd.service | grep Active >> $outfil
-systemctl status autofs.service | grep Active >> $outfil
-systemctl status cron.service | grep Active >> $outfil
-systemctl status cups.service  | grep Active >> $outfil
+echo -n "getty       狀態： " >> $outfil
 systemctl status getty.service   | grep Active >> $outfil
-systemctl status ipmievd.service  | grep Active >> $outfil
+echo -n "nfs         狀態： " >> $outfil
 systemctl status nfs.service   | grep Active >> $outfil
+echo -n "nfsserver   狀態： " >> $outfil
 systemctl status nfsserver.service | grep Active >> $outfil
-systemctl status postfix.service | grep Active >> $outfil
-systemctl status rsyslog.service   | grep Active >> $outfil
-systemctl status sshd.service  | grep Active >> $outfil
-systemctl status vsftpd.service | grep Active >> $outfil
-systemctl status xinetd.service  | grep Active >> $outfil
-systemctl status vsftpd.socket  | grep Active >> $outfil
+echo -n "nfs-client  狀態： " >> $outfil
 systemctl status nfs-client.target | grep Active >> $outfil
+echo -n "postfix     狀態： " >> $outfil
+systemctl status postfix.service | grep Active >> $outfil
+echo -n "rsyslog     狀態： " >> $outfil
+systemctl status rsyslog.service   | grep Active >> $outfil
+echo -n "sshd        狀態： " >> $outfil
+systemctl status sshd.service  | grep Active >> $outfil
+echo -n "vsftpd      狀態： " >> $outfil
+systemctl status vsftpd.service | grep Active >> $outfil
+
+
 
 echo "----------------------------------" >> $outfil
 echo "  " >> $outfil
