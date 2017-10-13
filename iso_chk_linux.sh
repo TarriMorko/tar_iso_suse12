@@ -1,7 +1,7 @@
 #!/bin/ksh
-wrkdir=/home/spos2
+wrkdir=/home/spos4
 hname=`hostname`
-outfil=/home/spos2/$hname.iso_chk_linux.txt
+outfil=/home/spos4/$hname.iso_chk_linux.txt
 echo "############################"  > $outfil
 echo "# LINUX系統強化檢核表附件 #" >> $outfil
 echo "############################"  >> $outfil
@@ -196,7 +196,7 @@ echo "  " >> $outfil
 echo "7-1 確認目前是否已更新至修補程式之最適版本。 " >> $outfil
 echo "==================================" >> $outfil
 echo "維持半年前之最適版本"   >> $outfil
-cat /etc/SuSE-release
+cat /etc/SuSE-release  >> $outfil 
 echo "----------------------------------" >> $outfil
 echo "  " >> $outfil
 
@@ -218,3 +218,14 @@ echo "==================================" >> $outfil
 echo "安裝軟體、開申請單核准後進機房使用"  >> $outfil
 echo "----------------------------------" >> $outfil
 echo "  " >> $outfil
+
+echo "經　　　辦： "  >> $outfil
+echo "  " >> $outfil
+echo "  " >> $outfil
+
+echo "副　科　長： "  >> $outfil
+echo "  " >> $outfil
+echo "  " >> $outfil
+
+echo "科      長： "  >> $outfil
+
