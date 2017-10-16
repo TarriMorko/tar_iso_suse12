@@ -24,11 +24,11 @@ echo "==================================" >> $outfil
 echo " cat /etc/login.defs|grep PASS_MAX_DAYS"  >> $outfil
 cat /etc/login.defs|grep PASS_MAX_DAYS |grep -v "^#" >> $outfil
 echo "---------   ----------  ----------- " >> $outfil
-echo "pam-config --query --pwhistory" >> $outfil
-pam-config --query --pwhistory  >> $outfil
+echo "cat common-password-pc | grep pam_pwhistory.so" >> $outfil
+cat /etc/pam.d/common-password-pc | grep pam_pwhistory.so >> $outfil
 echo "---------   ----------  ----------- " >> $outfil
-echo "pam-config --query --cracklib" >> $outfil
-pam-config --query --cracklib >> $outfil
+echo "cat common-password-pc | grep pam_cracklib.so" >> $outfil
+cat /etc/pam.d/common-password-pc | grep pam_cracklib.so >> $outfil
 echo "----------------------------------" >> $outfil
 echo "  " >> $outfil
 
