@@ -32,14 +32,6 @@ pam-config --query --cracklib >> $outfil
 echo "----------------------------------" >> $outfil
 echo "  " >> $outfil
 
-for name in $(cat /etc/passwd | awk -F":" '{print $1}'); do
-    echo ""            >> $outfil
-    echo $name ":"            >> $outfil
-    echo ""            >> $outfil
-    chage -l $name            >> $outfil
-done
-
-
 
 echo "2-2 確認使用者帳號的可判別性？" >> $outfil
 echo "==================================" >> $outfil
