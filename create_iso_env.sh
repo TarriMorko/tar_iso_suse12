@@ -89,13 +89,12 @@ systemctl start auditd.service
 
 ## Add Accounts
 groupadd -g 800 datactrl
-groupadd -g 900 dc1
-groupadd -g 920 dc3
 groupadd -g 700 sp
 
-useradd opusr -c opusr -g 800 -m -u 802 -s /bin/bash
-useradd spadmin -c spadmin -g 700 -m -u 712 -s /bin/bash
+
 useradd spos1 -c spos1 -g 700 -m -u 701 -s /bin/bash
 useradd spos2 -c spos2 -g 700 -m -u 702 -s /bin/bash
 useradd spos3 -c spos3 -g 700 -m -u 703 -s /bin/bash
-useradd spos4 -c spos4 -g 700 -m -u 704 -s /bin/bash
+useradd spos4 -c spos4 -g 700 -m -u 705 -s /bin/bash
+useradd opusr -c opusr -g 800 -m -u 802 -s /bin/bash
+useradd spadmin -c spadmin -g 700 -m -u 712 -s /bin/bash
