@@ -11,7 +11,7 @@
 # (e.g., /etc/shadow, LDAP, Kerberos, etc.). The default is to use the
 # traditional Unix authentication mechanisms.
 #
-auth required pam_tally2.so file=/var/log/tallylog deny=3 even_deny_root unlock_time=1200
+auth required pam_tally2.so file=/var/log/tallylog deny=3 unlock_time=1200
 auth	required	pam_env.so	
 auth	optional	pam_gnome_keyring.so
 auth	required	pam_unix.so	sha512 try_first_pass 
