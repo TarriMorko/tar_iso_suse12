@@ -14,6 +14,12 @@ if [ $rc -ne 0 ] ; then
     exit 0
 fi
 
+userdel -r spos1
+userdel -r spos2
+userdel -r spos3
+userdel -r spos4
+userdel -r opusr
+userdel -r spadmin
 
 ## Backup Setting
 cp -p /etc/issue /etc/issue.bak
