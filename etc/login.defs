@@ -107,7 +107,7 @@ KILLCHAR	025
 # 022 is the default value, but 027, or even 077, could be considered
 # better for privacy. There is no One True Answer here: each sysadmin
 # must make up her mind.
-UMASK		022
+UMASK		027
 
 #
 # Password aging controls:
