@@ -150,8 +150,8 @@ echo "  " >> $outfil
 
 echo "4-2 確認系統稽核log檔是否適當保護？ "  >> $outfil
 echo "==================================" >> $outfil
-echo "ls -l /aulog "  >> $outfil
-ls -l /aulog   >> $outfil
+echo "ls -l /aulog/audit.log "  >> $outfil
+ls -l /aulog/audit.log   >> $outfil
 echo "----------------------------------" >> $outfil
 echo "  " >> $outfil
 
